@@ -23,7 +23,7 @@ steps:
     python -m pip install --upgrade pip
     pip install wheel
     setup.py bdist_wheel
-    pip install --upgrade --force-reinstall dist/scraping_game-1.0.0-py3-none-any.whl
+    pip install --upgrade --force-reinstall dist/scraping_games-1.0.0-py3-none-any.whl
   displayName: 'Install dependencies'
 
 - script: |
