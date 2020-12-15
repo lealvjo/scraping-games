@@ -10,7 +10,7 @@ class DataJson(object):
     def ad_data_order(self, page_indx, data_order, game_link, game_pht):
         self.js = {
             "id": self.id,
-            "page_indx": int(page_indx),
+            "page_indx": page_indx,
             "name": data_order['name'],
             "price": data_order['price'],
             "game_link": game_link,
