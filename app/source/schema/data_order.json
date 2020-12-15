@@ -1,0 +1,25 @@
+{
+        "title": "Person",
+        "type": "object",
+        "required": [ "page_indx", "name", "price", "game_link", "game_pht"],
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "page_indx": {
+                "type": "integer"
+            },
+            "name": {
+                "type": "string"
+            },
+            "price": {
+                "type": "string"
+            },
+            "game_link": {
+                "type": "string"
+            },
+            "game_pht": {
+                "type": "string"
+            }
+          }
+        }
