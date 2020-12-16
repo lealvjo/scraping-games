@@ -112,7 +112,7 @@ Application Programming Interface (API) - web scraping on playstationstore promo
                 "type": "integer"
             },
             "page_indx": {
-                "type": "integer"
+                "type": "string"
             },
             "name": {
                 "type": "string"
