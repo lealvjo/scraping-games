@@ -19,7 +19,7 @@ class DataJson(object):
         self.data_order.append(self.js)
         self.id += 1
 
-    def schema(self,b):
+    def schema(self, body):
         path = ""
         root = [r + "/" for r in dirname(abspath(__file__)).split("\\")]
         for r in root:
@@ -30,4 +30,4 @@ class DataJson(object):
                 path += r
         with open(path + 'schema/data_order.json', 'r') as fp:
             schema = json.load(fp)
-        validate(b , schema)
+        validate(body, schema)
