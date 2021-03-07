@@ -1,5 +1,5 @@
 import json
-from os.path import dirname, abspath, join
+from os.path import dirname, abspath
 from jsonschema import validate
 
 class DataJson(object):
@@ -7,17 +7,16 @@ class DataJson(object):
         self.data_order = []
         self.id = 0
 
-    def ad_data_order(self, page_indx, data_order, game_link, game_pht):
+    def ad_data_order(self, id, page_indx, game_name, game_price, game_link, game_pht):
         self.js = {
-            "id": self.id,
+            "id": id,
             "page_indx": page_indx,
-            "name": data_order['name'],
-            "price": data_order['price'],
+            "name": game_name,
+            "price": game_price,
             "game_link": game_link,
             "game_pht": game_pht
         }
         self.data_order.append(self.js)
-        self.id += 1
 
     def schema(self, body):
         path = ""

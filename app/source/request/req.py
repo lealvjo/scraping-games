@@ -1,9 +1,9 @@
-from app.source.ps_store.ps_scraping import PsScraping
+from app.source.services.scraping import Scraping
 
-class Req(PsScraping):
+class Req(Scraping):
     def __init__(self):
-        PsScraping.__init__(self)
-        self.get_ps_store()
+        Scraping.__init__(self)
+        self.get_promotions()
         self.endpoint = {
             'home': '/game',
             'search_for_id': '/game/<int:id>',
