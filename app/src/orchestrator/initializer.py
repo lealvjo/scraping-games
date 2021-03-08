@@ -4,7 +4,7 @@ from app.src.services.scraping import Scraping
 class Initializer(Scraping):
     def __init__(self):
         Scraping.__init__(self)
-        self.get_promotions()
+        self.get_games_collection()
         self.endpoint = {
             'home': '/python/game',
             'search_for_id': '/python/game/<int:id>',

@@ -3,7 +3,7 @@ This method is called when generated the packet by setup.py, or when you need to
 '''
 
 from flask import Flask, request
-from app.src.controller.initializer import Initializer
+from app.src.orchestrator.initializer import Initializer
 
 route_initializer = Initializer()
 app = Flask(__name__)

@@ -3,12 +3,14 @@ from os.path import dirname, abspath, join
 
 ROOT = dirname(abspath(__file__))
 
+
 def get_extra_requires(path):
     extra_deps = []
     with open(path) as fp:
         for p in fp.readlines():
             extra_deps.append(p.replace("\n", ""))
     return extra_deps
+
 
 setup(
     name='scraping_games',
@@ -25,5 +27,5 @@ setup(
         "console_scripts": [
             "games_store=app.main:main"
         ]},
-    package_data={'' : [join(ROOT, 'app/src/schema/data_order.json')]}
+    package_data={'': [join(ROOT, 'app/resource/schema/game_data_schema.json')]}
 )
