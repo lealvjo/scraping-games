@@ -2,62 +2,45 @@
 This method is called when generated the packet by setup.py, or when you need to run in your IDE
 '''
 
-from flask import Flask, jsonify, request
-from app.source.request.req import Req
+from flask import Flask, request
+from app.src.controller.initializer import Initializer
 
-r = Req()
+route_initializer = Initializer()
 app = Flask(__name__)
 
 
-@app.route(r.endpoint['home'], methods=['GET'])
-def home():
-    return jsonify(r.data_order), 200
+@app.route(route_initializer.endpoint['home'], methods=['GET'])
+def route_home():
+    return route_initializer.home()
 
 
-@app.route(r.endpoint['search_for_id'], methods=['GET'])
-def games_per_id(id):
-    for d in r.data_order:
-        if d['id'] == id:
-            return jsonify(d), 200
-    return jsonify({'error': 'game not found'}), 404
+@app.route(route_initializer.endpoint['search_for_id'], methods=['GET'])
+def route_games_per_id(id):
+    return route_initializer.games_per_id(id)
 
 
-@app.route(r.endpoint['search_for_index_ps_page'], methods=['GET'])
-def games_per_page(page):
-    games = [d for d in r.data_order if d['page_indx'] == page]
-    return jsonify(games), 200
+@app.route(route_initializer.endpoint['search_for_index_page'], methods=['GET'])
+def rout_games_per_page(page):
+    return route_initializer.games_per_page(page)
 
 
-@app.route(r.endpoint['home'], methods=['POST'])
-def save_game():
-    data = request.get_json()
-    data['id'] = r.data_order[-1]['id'] + 1
-    r.schema(data)
-    if data is not None:
-        r.data_order.append(data)
-        return jsonify(data), 201
-    else:
-        return jsonify({'error': 'not null'}), 404
+@app.route(route_initializer.endpoint['home'], methods=['POST'])
+def route_save_game():
+    return route_initializer.save_game(request.get_json())
 
 
-@app.route(r.endpoint['search_for_id'], methods=['PUT'])
-def change_price(id):
-    for d in r.data_order:
-        if d['id'] == id:
-            d['price'] = request.get_json().get('price')
-            return jsonify(d), 200
-    return jsonify({'error': 'game not found'}), 404
+@app.route(route_initializer.endpoint['search_for_id'], methods=['PUT'])
+def route_change_price(id):
+    return route_initializer.change_price(id, request.get_json())
 
 
-@app.route(r.endpoint['search_for_id'], methods=['DELETE'])
-def remove_game(id):
-    index = id - 1
-    del r.data_order[index]
-    return jsonify({'message': 'game is no longer alive'}), 200
+@app.route(route_initializer.endpoint['search_for_id'], methods=['DELETE'])
+def route_delete_game(id):
+    return route_initializer.delete_game(id)
 
 
 def main():
-    app.run(debug=False)
+    app.run(debug=True)
 
 
 if __name__ == '__main__':

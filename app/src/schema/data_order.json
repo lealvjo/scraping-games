@@ -7,7 +7,7 @@
                 "type": "integer"
             },
             "page_indx": {
-                "type": "string"
+                "type": "integer"
             },
             "name": {
                 "type": "string"

@@ -44,30 +44,30 @@ Application Programming Interface (API) - web scraping on playstationstore promo
 
 #Endpoints virtual environment and local environment
 
-    - [x] /game
-    - [x] /game/<int:id>
-    - [x] /game/page/<int:page>
+    - [x] python/game
+    - [x] python/game/<int:id>
+    - [x] python/game/page/<int:page>
 
     Select all games raise all games
 
         - [x] using the get method
         
         url
-            http://localhost:5000/game
+            http://localhost:5000/python/game/
 
     raise only one games
 
         - [x] using the get method
         
         url
-            http://localhost:5000/game/<int:id>
+            http://localhost:5000/python/game/<int:id>
 
     lift all sets from a specific page
 
         - [x] using the get method
         
         url
-            http://localhost:5000/game/page/<int:page>
+            http://localhost:5000/python/game/page/<int:page>
 
     submit a new game
 
@@ -82,14 +82,14 @@ Application Programming Interface (API) - web scraping on playstationstore promo
         }
 
         url
-            http://localhost/5000/game
+            http://localhost/5000/python/game/
 
     delete a specific game
 
         - [x] using the delete method
 
         url
-            http://localhost/5000/game/<int:id>
+            http://localhost/5000/python/game/<int:id>
 
     change the price of a specific game
         
@@ -100,7 +100,7 @@ Application Programming Interface (API) - web scraping on playstationstore promo
                 }
 
         url
-            http://localhost/5000/game/<int:id>
+            http://localhost/5000/python/game/<int:id>
 
     schema:
         {

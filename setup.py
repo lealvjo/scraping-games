@@ -23,7 +23,7 @@ setup(
     install_requires=get_extra_requires(join(ROOT, "requirements.txt")),
     entry_points={
         "console_scripts": [
-            "ps_store=app.main:main"
+            "games_store=app.main:main"
         ]},
-    package_data={'' : [join(ROOT, 'app/source/schema/data_order.json')]}
+    package_data={'' : [join(ROOT, 'app/src/schema/data_order.json')]}
 )
