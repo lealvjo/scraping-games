@@ -140,14 +140,14 @@ Application Programming Interface (API) - web scraping on playstationstore promo
     
     *** You can install it in the virtual environment or on any other machine, even yours locally.
     
-    - [x] type: pip install --upgrade --force-reinstall dist/scraping_games-{version}-py3-none-any.whl
+    - [x] type: pip install --upgrade --force-reinstall dist/games_store-{version}-py3-none-any.whl
     
 
 #To run the project installed
 
     If installed in any environment to run by calling entry_points.
     
-    - [x] In the terminal type: {ps_store} and press enter
+    - [x] In the terminal type: {games_store_run} and press enter
     
     Running on http://localhost/:5000/
     

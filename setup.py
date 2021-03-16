@@ -13,7 +13,7 @@ def get_extra_requires(path):
 
 
 setup(
-    name='scraping_games',
+    name='games_store',
     version='1.0.0',
     packages=find_packages(),
     url='https://github.com/lealvjo/scraping_games',
@@ -25,7 +25,7 @@ setup(
     install_requires=get_extra_requires(join(ROOT, "requirements.txt")),
     entry_points={
         "console_scripts": [
-            "games_store=app.main:main"
+            "games_store_run=app.main:main"
         ]},
     package_data={'': [join(ROOT, 'app/resource/schema/game_data_schema.json')]}
 )
