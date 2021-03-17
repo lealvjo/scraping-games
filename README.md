@@ -1,5 +1,5 @@
 # scraping_game
-Application Programming Interface (API) - web scraping on playstationstore promotions and returns a new json object for testing
+Application Programming Interface (API) - web scraping on games promotions and returns a new json object for testing
 
 # Importing the project and creat virtual environment project Pycharm
 
