@@ -10,7 +10,7 @@ Application Programming Interface (API) - web scraping on playstationstore promo
 - [x] Navigate to python interpreter and click on the gear
 - [x] Select add and new environment
     
-Enabling virtual environment
+# Enabling virtual environment
     
     A virtual environment is a Python environment, so the Python interpreter, libraries and scripts 
     installed in it are isolated from those installed in other virtual environments.
@@ -23,7 +23,7 @@ Enabling virtual environment
     After this will appear a (venv) before your project, it means that the virtual environment has been enabled**
         Ex: (venv) C:\Users\{user}\PycharmProjects\web_scraping\
 
-Installing external packages
+# Installing external packages
 
     Text file, containing a list of items / packages to be installed during pip install.
 
@@ -37,7 +37,7 @@ To check what has been installed
   
     The application is at the root /app
 
-Running IDE (Pycharm)
+# Running IDE (Pycharm)
 
 - [x] It's going to ate or main method app/main.py
 - [x] Choose start or debug
@@ -45,7 +45,7 @@ Running IDE (Pycharm)
     
 In this option the application rises in your virtualized environment
 
-Endpoints virtual environment and local environment
+# Endpoints virtual environment and local environment
 
 - [x] python/game
 - [x] python/game/<int:id>
@@ -136,7 +136,7 @@ schema:
         }
         
 
-To generate a new installable package setup.py
+# To generate a new installable package setup.py
 
 Setup.py is a python file, which usually informs you that the module / package you are about to install has been packaged and distributed with Distutils, 
 which is the standard for distributing Python modules. This allows you to easily install Python packages.
@@ -149,7 +149,7 @@ You can install it in the virtual environment or on any other machine, even your
 - [x] type: pip install --upgrade --force-reinstall dist/games_store-{version}-py3-none-any.whl
     
 
-To run the project installed
+# To run the project installed
 
 If installed in any environment to run by calling entry_points.
     
