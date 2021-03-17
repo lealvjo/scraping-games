@@ -122,3 +122,4 @@ dmypy.json
 /venv/
 /web_scraping.egg-info/
 /build/
+.idea/
