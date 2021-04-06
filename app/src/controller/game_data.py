@@ -54,14 +54,14 @@ class GameData(object):
 
     def schema(self, body):
         path = ""
-        root = [r + "*/" for r in dirname(abspath(__file__)).split("\\")]
+        root = [r + "/" for r in dirname(abspath(__file__)).split("\\")]
         for r in root:
-            if "app" in r:
+            if "scraping_games" in r:
                 path += r
                 break
             else:
                 path += r
         print("**Folder path {}".format(path))
-        with open(path + 'resource/schema/game_data_schema.json', 'r') as fp:
+        with open(path + 'app/resource/schema/game_data_schema.json', 'r') as fp:
             schema = json.load(fp)
         validate(body, schema)
