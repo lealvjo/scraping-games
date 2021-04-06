@@ -61,7 +61,7 @@ class GameData(object):
                 break
             else:
                 path += r
-        print("*Folder path {}".format(path))
+        print("**Folder path {}".format(path))
         with open(path + 'resource/schema/game_data_schema.json', 'r') as fp:
             schema = json.load(fp)
         validate(body, schema)
