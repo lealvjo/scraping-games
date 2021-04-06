@@ -28,7 +28,7 @@ class GameData(object):
 
     def save_game(self, data):
         data['id'] = self.__game_database[-1]['id'] + 1
-        #self.schema(data)
+        self.schema(data)
         if data is not None:
             self.__game_database.append(data)
             return jsonify(data), 201
@@ -61,6 +61,7 @@ class GameData(object):
                 break
             else:
                 path += r
+        print("Folder path {}".format(path))
         with open(path + 'resource/schema/game_data_schema.json', 'r') as fp:
             schema = json.load(fp)
         validate(body, schema)
