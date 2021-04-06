@@ -15,6 +15,7 @@ class Scraping(GameData):
         except:
             print("shocked climb :(")
             self.ad_data_order(0, 1, 'Game Mock', 'R$ 01,00', 'https://mock', 'https://mock.jpg')
+            pass
 
     def __get_attribute_game(self):
         self.web_page = BeautifulSoup(self.web.text, "html.parser")
