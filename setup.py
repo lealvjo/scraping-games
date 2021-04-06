@@ -27,5 +27,5 @@ setup(
         "console_scripts": [
             "games_store_run=app.main:main"
         ]},
-    package_data={'': [join(ROOT, 'app/resource/schema/game_data_schema.json')]}
+    package_data={'': [join(ROOT, 'app/src/controller/schema/game_data_schema.json')]}
 )

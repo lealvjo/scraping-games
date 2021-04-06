@@ -1,4 +1,5 @@
 import json
+import os
 from os.path import dirname, abspath
 from flask import jsonify
 from jsonschema import validate
@@ -53,15 +54,7 @@ class GameData(object):
         return jsonify({'error': 'game not found'}), 404
 
     def schema(self, body):
-        path = ""
-        root = [r + "/" for r in dirname(abspath(__file__)).split("\\")]
-        for r in root:
-            if "scraping_games" in r:
-                path += r
-                break
-            else:
-                path += r
-        print("**Folder path {}".format(path))
-        with open(path + 'app/resource/schema/game_data_schema.json', 'r') as fp:
+        print("Os.Path {}".format(str(os.path.dirname(os.path.realpath(__file__)))))
+        with open(str(os.path.dirname(os.path.realpath(__file__))) + '/schema/game_data_schema.json', 'r') as fp:
             schema = json.load(fp)
         validate(body, schema)
