@@ -1,7 +1,6 @@
 import json
 import os
-from os.path import dirname, abspath
-from typing import Dict, Any
+from typing import Any
 
 from flask import jsonify
 from jsonschema import validate
@@ -13,14 +12,16 @@ class GameData(object):
     def __init__(self):
         self.__game_database = []
 
-    def add_game_database(self, idx, page_index, game_name, game_price, game_link, game_pht):
+    def add_game_database(
+        self, idx, page_index, game_name, game_price, game_link, game_pht
+    ):
         self.__game_order = {
-            "id": idx,
-            "page_indx": page_index,
-            "name": game_name,
-            "price": game_price,
-            "game_link": game_link,
-            "game_pht": game_pht
+            'id': idx,
+            'page_indx': page_index,
+            'name': game_name,
+            'price': game_price,
+            'game_link': game_link,
+            'game_pht': game_pht,
         }
         self.__game_database.append(self.__game_order)
 
@@ -41,7 +42,11 @@ class GameData(object):
             return jsonify({'error': 'not null'}), 404
 
     def games_per_page(self, index_page):
-        games = [d for d in self.__game_database if d['page_indx'] == index_page]
+        games = [
+            game
+            for game in self.__game_database
+            if game['page_indx'] == index_page
+        ]
         return jsonify(games), 200
 
     def games_per_id(self, idx):
@@ -59,7 +64,15 @@ class GameData(object):
 
     @staticmethod
     def schema(body):
-        print("Os.Path {}".format(str(os.path.dirname(os.path.realpath(__file__)))))
-        with open(str(os.path.dirname(os.path.realpath(__file__))) + '/schema/game_data_schema.json', 'r') as fp:
+        print(
+            'Os.Path {}'.format(
+                str(os.path.dirname(os.path.realpath(__file__)))
+            )
+        )
+        with open(
+            str(os.path.dirname(os.path.realpath(__file__)))
+            + '/schema/game_data_schema.json',
+            'r',
+        ) as fp:
             schema = json.load(fp)
         validate(body, schema)

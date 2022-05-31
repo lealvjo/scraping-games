@@ -33,11 +33,11 @@ def create_app():
 
     @app.route(route_initializer.endpoint['search_for_id'], methods=['PUT'])
     def route_change_price(idx):
-        return route_initializer.change_price(id, request.get_json())
+        return route_initializer.change_price(idx, request.get_json())
 
     @app.route(route_initializer.endpoint['search_for_id'], methods=['DELETE'])
     def route_delete_game(idx):
-        return route_initializer.delete_game(id)
+        return route_initializer.delete_game(idx)
 
     return app
 
