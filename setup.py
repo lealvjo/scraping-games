@@ -25,7 +25,7 @@ setup(
     install_requires=get_extra_requires(join(ROOT, "requirements.txt")),
     entry_points={
         "console_scripts": [
-            "games_store_run=app.main:main"
+            "games_store_run=src.main:main"
         ]},
-    package_data={'': [join(ROOT, 'app/src/controller/schema/game_data_schema.json')]}
+    package_data={'': [join(ROOT, 'src/scraping/controller/schema/game_data_schema.json')]}
 )

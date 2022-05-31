@@ -1,4 +1,4 @@
-from app.src.services.scraping import Scraping
+from src.scraping.services.scraping import Scraping
 
 
 class Initializer(Scraping):

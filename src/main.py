@@ -3,7 +3,7 @@ This method is called when generated the packet by setup.py, or when you need to
 '''
 
 from flask import Flask, request
-from app.src.orchestrator.initializer import Initializer
+from src.scraping.orchestrator.initializer import Initializer
 
 
 def create_app():
@@ -20,8 +20,8 @@ def create_app():
         return route_initializer.home()
 
     @app.route(route_initializer.endpoint['search_for_id'], methods=['GET'])
-    def route_games_per_id(id):
-        return route_initializer.games_per_id(id)
+    def route_games_per_id(idx):
+        return route_initializer.games_per_id(idx)
 
     @app.route(route_initializer.endpoint['search_for_index_page'], methods=['GET'])
     def rout_games_per_page(page):
@@ -32,11 +32,11 @@ def create_app():
         return route_initializer.save_game(request.get_json())
 
     @app.route(route_initializer.endpoint['search_for_id'], methods=['PUT'])
-    def route_change_price(id):
+    def route_change_price(idx):
         return route_initializer.change_price(id, request.get_json())
 
     @app.route(route_initializer.endpoint['search_for_id'], methods=['DELETE'])
-    def route_delete_game(id):
+    def route_delete_game(idx):
         return route_initializer.delete_game(id)
 
     return app
@@ -48,3 +48,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

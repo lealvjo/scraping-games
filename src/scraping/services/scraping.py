@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from app.src.controller.game_data import GameData
+from src.scraping.controller.game_data import GameData
 
 
 class Scraping(GameData):

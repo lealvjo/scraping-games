@@ -1,17 +1,21 @@
 import json
 import os
 from os.path import dirname, abspath
+from typing import Dict, Any
+
 from flask import jsonify
 from jsonschema import validate
 
 
 class GameData(object):
+    __game_order: dict[str, Any]
+
     def __init__(self):
         self.__game_database = []
 
-    def add_game_database(self, id, page_index, game_name, game_price, game_link, game_pht):
+    def add_game_database(self, idx, page_index, game_name, game_price, game_link, game_pht):
         self.__game_order = {
-            "id": id,
+            "id": idx,
             "page_indx": page_index,
             "name": game_name,
             "price": game_price,
@@ -53,7 +57,8 @@ class GameData(object):
                 return jsonify(d), 200
         return jsonify({'error': 'game not found'}), 404
 
-    def schema(self, body):
+    @staticmethod
+    def schema(body):
         print("Os.Path {}".format(str(os.path.dirname(os.path.realpath(__file__)))))
         with open(str(os.path.dirname(os.path.realpath(__file__))) + '/schema/game_data_schema.json', 'r') as fp:
             schema = json.load(fp)
