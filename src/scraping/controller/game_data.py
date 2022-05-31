@@ -14,7 +14,7 @@ class GameData(object):
         self.__game_database = []
 
     def add_game_database(
-        self, idx, page_index, game_name, game_price, game_link, game_pht
+            self, idx, page_index, game_name, game_price, game_link, game_pht
     ):
         self.__game_order = {
             'id': idx,
@@ -25,10 +25,6 @@ class GameData(object):
             'game_pht': game_pht,
         }
         self.__game_database.append(self.__game_order)
-
-    def add_game_database_mock(self, mock):
-        for m in mock:
-            self.__game_database.append(m)
 
     def home(self):
         return jsonify(self.__game_database), 200
@@ -75,9 +71,9 @@ class GameData(object):
             )
         )
         with open(
-            str(os.path.dirname(os.path.realpath(__file__)))
-            + '/schema/game_data_schema.json',
-            'r',
+                str(os.path.dirname(os.path.realpath(__file__)))
+                + '/schema/game_data_schema.json',
+                'r',
         ) as fp:
             schema = json.load(fp)
         validate(body, schema)

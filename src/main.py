@@ -1,6 +1,6 @@
-"""
-This method is called when generated the packet by setup.py, or when you need to run in your IDE.
-"""
+'''
+This method is called when generated the packet by setup.py, or when you need to run in your IDE
+'''
 
 from flask import Flask, request
 
@@ -8,6 +8,7 @@ from src.scraping.orchestrator.initializer import Initializer
 
 
 def create_app():
+
     route_initializer = Initializer()
     app = Flask(__name__)
 
@@ -23,9 +24,7 @@ def create_app():
     def route_games_per_id(idx):
         return route_initializer.games_per_id(idx)
 
-    @app.route(
-        route_initializer.endpoint['search_for_index_page'], methods=['GET']
-    )
+    @app.route(route_initializer.endpoint['search_for_index_page'], methods=['GET'])
     def rout_games_per_page(page):
         return route_initializer.games_per_page(page)
 
@@ -50,3 +49,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
