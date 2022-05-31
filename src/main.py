@@ -3,6 +3,7 @@ This method is called when generated the packet by setup.py, or when you need to
 '''
 
 from flask import Flask, request
+
 from src.scraping.orchestrator.initializer import Initializer
 
 

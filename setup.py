@@ -1,5 +1,6 @@
-from setuptools import setup, find_packages
-from os.path import dirname, abspath, join
+from os.path import abspath, dirname, join
+
+from setuptools import find_packages, setup
 
 ROOT = dirname(abspath(__file__))
 

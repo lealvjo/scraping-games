@@ -1,9 +1,10 @@
 import json
 import os
 from typing import Any
-from loguru import logger
+
 from flask import jsonify
 from jsonschema import validate
+from loguru import logger
 
 
 class GameData(object):
