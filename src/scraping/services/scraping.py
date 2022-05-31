@@ -24,7 +24,8 @@ class Scraping(GameData):
                 'The Legend of Zelda - Breath of the Wild',
                 'R$ 299,00',
                 'https://www.nintendo.com/pt_BR/games/detail/the-legend-of-zelda-breath-of-the-wild-switch/',
-                'https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/pt_BR/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2022042121',
+                'https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,'
+                'w_1089/ncom/pt_BR/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2022042121',
             )
 
     def __get_attribute_game(self):
