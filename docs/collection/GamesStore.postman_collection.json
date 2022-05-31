@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "GamesStore",
+		"_postman_id": "bb79040e-3990-eb5b-3da2-863a20bfdca3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find all game",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "search game by pagination",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game/page/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "find game id",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game/0",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "submit a new game",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page_indx\": \"11\",\r\n    \"name\": \"Jcyberpunk 2077\",\r\n    \"price\": \"R$ 200,00\",\r\n    \"game_link\": \"http://teste\",\r\n    \"game_pht\": \"http://teste\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete game id",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page_indx\": \"11\",\r\n    \"name\": \"Jcyberpunk 2077\",\r\n    \"price\": \"R$ 200,00\",\r\n    \"game_link\": \"http://teste\",\r\n    \"game_pht\": \"http://teste\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "game price changed by id",
+			"request": {
+				"url": "https://scraping-game.herokuapp.com/game/0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": \"R$ 300,10\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
