@@ -14,7 +14,7 @@ class Scraping(GameData):
             self.__get_attribute_game()
         except:
             print("shocked climb :(")
-            self.add_game_database(0, 1, 'Game Mock', 'R$ 01,00', 'https://mock', 'https://mock.jpg')
+            self.add_game_database(0, 1, 'The Legend of Zelda - Breath of the Wild', 'R$ 299,00', 'https://www.nintendo.com/pt_BR/games/detail/the-legend-of-zelda-breath-of-the-wild-switch/', 'https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/pt_BR/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2022042121')
 
     def __get_attribute_game(self):
         self.web_page = BeautifulSoup(self.web.text, "html.parser")
@@ -23,7 +23,8 @@ class Scraping(GameData):
             'div', {'class', 'product-card--grid'})
         for p in products_list:
             util = p.find('div', {'class',
-                                  'product__available product__purchasable product-card product-card__cover product-btn-add-to-cart--container'})
+                                  'product__available product__purchasable product-card product-card__cover '
+                                  'product-btn-add-to-cart--container'})
 
             self.add_game_database(products_list.index(p),
                                    1,
