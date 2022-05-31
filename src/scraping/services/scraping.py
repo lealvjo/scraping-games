@@ -1,3 +1,5 @@
+import json
+
 import requests
 from bs4 import BeautifulSoup
 from loguru import logger
@@ -20,15 +22,8 @@ class Scraping(GameData):
             self.__get_attribute_game()
         except:
             logger.info('shocked climb :(')
-            self.add_game_database(
-                0,
-                1,
-                'The Legend of Zelda - Breath of the Wild',
-                'R$ 299,00',
-                'https://www.nintendo.com/pt_BR/games/detail/the-legend-of-zelda-breath-of-the-wild-switch/',
-                'https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,'
-                'w_1089/ncom/pt_BR/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2022042121',
-            )
+            with open('mock/mock.json', 'r', encoding='utf8') as f:
+                self.add_game_database_mock(json.load(f))
 
     def __get_attribute_game(self):
         self.web_page = BeautifulSoup(self.web.text, 'html.parser')

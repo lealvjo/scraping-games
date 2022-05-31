@@ -26,6 +26,10 @@ class GameData(object):
         }
         self.__game_database.append(self.__game_order)
 
+    def add_game_database_mock(self, mock):
+        for m in mock:
+            self.__game_database.append(m)
+
     def home(self):
         return jsonify(self.__game_database), 200
 
