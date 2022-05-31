@@ -6,7 +6,7 @@ class Initializer(Scraping):
         Scraping.__init__(self)
         self.get_games_collection()
         self.endpoint = {
-            'home': '/python/game',
-            'search_for_id': '/python/game/<int:id>',
-            'search_for_index_page': '/python/game/page/<int:page>'
+            'home': '/game',
+            'search_for_id': '/game/<int:id>',
+            'search_for_index_page': '/game/page/<int:page>'
         }
