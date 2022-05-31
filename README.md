@@ -57,21 +57,21 @@ select all games raise all games
 - [x] using the get method
         
         url
-            http://localhost:5000/python/game/
+            http://localhost:5000/game/
   
 raise only one games
 
 - [x] using the get method
         
         url
-            http://localhost:5000/python/game/<int:id>
+            http://localhost:5000/game/<int:id>
 
 lift all sets from a specific page
 
 - [x] using the get method
         
         url
-            http://localhost:5000/python/game/page/<int:page>
+            http://localhost:5000/game/page/<int:page>
   
 submit a new game
 
@@ -86,14 +86,14 @@ submit a new game
         }
 
         url
-            http://localhost/5000/python/game/
+            http://localhost/game/
 
 delete a specific game
 
 - [x] using the delete method
 
         url
-            http://localhost/5000/python/game/<int:id>
+            http://localhost/game/<int:id>
 
 change the price of a specific game
         
@@ -104,7 +104,7 @@ change the price of a specific game
                 }
 
         url
-            http://localhost/5000/python/game/<int:id>
+            http://localhost/5000/game/<int:id>
 
 
 schema:
