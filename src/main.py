@@ -23,7 +23,9 @@ def create_app():
     def route_games_per_id(idx):
         return route_initializer.games_per_id(idx)
 
-    @app.route(route_initializer.endpoint['search_for_index_page'], methods=['GET'])
+    @app.route(
+        route_initializer.endpoint['search_for_index_page'], methods=['GET']
+    )
     def rout_games_per_page(page):
         return route_initializer.games_per_page(page)
 
