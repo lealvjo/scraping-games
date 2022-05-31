@@ -1,6 +1,6 @@
-'''
+"""
 This method is called when generated the packet by setup.py, or when you need to run in your IDE
-'''
+"""
 
 from flask import Flask, request
 
@@ -24,7 +24,9 @@ def create_app():
     def route_games_per_id(idx):
         return route_initializer.games_per_id(idx)
 
-    @app.route(route_initializer.endpoint['search_for_index_page'], methods=['GET'])
+    @app.route(
+        route_initializer.endpoint['search_for_index_page'], methods=['GET']
+    )
     def rout_games_per_page(page):
         return route_initializer.games_per_page(page)
 
@@ -49,4 +51,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
