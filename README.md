@@ -78,7 +78,7 @@ submit a new game
 - [x] using the post method
 
         body ex = {
-            "page_indx": 11,
+            "page_indx": "11",
             "name": "Jcyberpunk 2077",
             "price": "R$ 200,00",
             "game_link": "http://teste",

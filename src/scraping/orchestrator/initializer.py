@@ -7,6 +7,6 @@ class Initializer(Scraping):
         self.get_games_collection()
         self.endpoint = {
             'home': '/game',
-            'search_for_id': '/game/<int:id>',
+            'search_for_id': '/game/<int:idx>',
             'search_for_index_page': '/game/page/<int:page>',
         }
