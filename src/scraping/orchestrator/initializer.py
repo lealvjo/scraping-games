@@ -8,5 +8,5 @@ class Initializer(Scraping):
         self.endpoint = {
             'home': '/game',
             'search_for_id': '/game/<int:id>',
-            'search_for_index_page': '/game/page/<int:page>'
+            'search_for_index_page': '/game/page/<int:page>',
         }
