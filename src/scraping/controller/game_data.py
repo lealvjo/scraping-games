@@ -27,8 +27,8 @@ class GameData(object):
     def home(self):
         return jsonify(self.__game_database), 200
 
-    def delete_game(self, id):
-        del self.__game_database[id - 1]
+    def delete_game(self, idx):
+        del self.__game_database[idx - 1]
         return jsonify({'message': 'game is no longer alive'}), 200
 
     def save_game(self, data):
@@ -44,15 +44,15 @@ class GameData(object):
         games = [d for d in self.__game_database if d['page_indx'] == index_page]
         return jsonify(games), 200
 
-    def games_per_id(self, id):
+    def games_per_id(self, idx):
         for d in self.__game_database:
-            if d['id'] == id:
+            if d['id'] == idx:
                 return jsonify(d), 200
         return jsonify({'error': 'game not found'}), 404
 
-    def change_price(self, id, data):
+    def change_price(self, idx, data):
         for d in self.__game_database:
-            if d['id'] == id:
+            if d['id'] == idx:
                 d['price'] = data.get('price')
                 return jsonify(d), 200
         return jsonify({'error': 'game not found'}), 404
