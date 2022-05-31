@@ -1,7 +1,7 @@
 import json
 import os
 from typing import Any
-
+from loguru import logger
 from flask import jsonify
 from jsonschema import validate
 
@@ -13,7 +13,7 @@ class GameData(object):
         self.__game_database = []
 
     def add_game_database(
-        self, idx, page_index, game_name, game_price, game_link, game_pht
+            self, idx, page_index, game_name, game_price, game_link, game_pht
     ):
         self.__game_order = {
             'id': idx,
@@ -64,15 +64,15 @@ class GameData(object):
 
     @staticmethod
     def schema(body):
-        print(
+        logger.info(
             'Os.Path {}'.format(
                 str(os.path.dirname(os.path.realpath(__file__)))
             )
         )
         with open(
-            str(os.path.dirname(os.path.realpath(__file__)))
-            + '/schema/game_data_schema.json',
-            'r',
+                str(os.path.dirname(os.path.realpath(__file__)))
+                + '/schema/game_data_schema.json',
+                'r',
         ) as fp:
             schema = json.load(fp)
         validate(body, schema)
