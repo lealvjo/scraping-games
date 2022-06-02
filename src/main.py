@@ -14,6 +14,7 @@ def create_app():
 
     @app.route('/')
     def index():
+        route_initializer.get_games_collection()
         return route_initializer.endpoint
 
     @app.route(route_initializer.endpoint['home'], methods=['GET'])
