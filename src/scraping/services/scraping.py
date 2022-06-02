@@ -18,6 +18,7 @@ class Scraping(GameData):
     def get_games_collection(self):
         try:
             self.__get_attribute_game()
+            logger.info(f'Success colection :) - {self.web.status_code}')
         except:
             logger.info(f'shocked climb :( {self.web.status_code} - {self.web.text}')
             self.add_game_database(
