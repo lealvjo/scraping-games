@@ -104,7 +104,7 @@ change the price of a specific game
                 }
 
         url
-            http://localhost/5000/game/<int:id>
+            http://localhost:5000/game/<int:id>
 
 
 schema:
@@ -180,6 +180,6 @@ If installed in any environment to run by calling entry_points.
 - [x] In the terminal type: {games_store_run} and press enter
     
     
-    Running on http://localhost/5000/
+    Running on http://localhost:5000/
     
 
