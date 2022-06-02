@@ -19,7 +19,7 @@ class Scraping(GameData):
         try:
             self.__get_attribute_game()
         except:
-            logger.info('shocked climb :(')
+            logger.info(f'shocked climb :( {self.web.status_code} - {self.web.text}')
             self.add_game_database(
                 0,
                 1,
