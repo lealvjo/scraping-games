@@ -17,7 +17,7 @@ setup(
     name='games_store',
     version='1.0.0',
     packages=find_packages(),
-    url='https://github.com/lealvjo/scraping_games',
+    url='https://github.com/lealvjo/scraping-games',
     license='',
     author='lealvjo',
     author_email='leonardo.jose.barros@hotmail.com',

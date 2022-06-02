@@ -3,7 +3,7 @@ Application Programming Interface (API) - web scraping on games promotions and r
 
 # Importing the project and creat virtual environment project Pycharm
 
-    import the project into git: https://github.com/lealvjo/web_scraping.git
+    import the project into git: https://github.com/lealvjo/web-scraping.git
     
 - [x] Open the project in pycharm
 - [x] Navigate to file and settings
@@ -21,7 +21,7 @@ Application Programming Interface (API) - web scraping on games promotions and r
     
     
     After this will appear a (venv) before your project, it means that the virtual environment has been enabled**
-        Ex: (venv) C:\Users\{user}\PycharmProjects\web_scraping\
+        Ex: (venv) C:\Users\{user}\PycharmProjects\web-scraping\
 
 # Installing external packages
 
@@ -35,11 +35,11 @@ To check what has been installed
 - [x] Type: pip list
     
   
-    The application is at the root /app
+    The application is at the root /src
 
 # Running IDE (Pycharm)
 
-- [x] It's going to ate or main method app/main.py
+- [x] It's going to or main method src/main.py
 - [x] Choose start or debug
 
     
@@ -47,9 +47,9 @@ In this option the application rises in your virtualized environment
 
 # Endpoints virtual environment and local environment
 
-- [x] python/game
-- [x] python/game/<int:id>
-- [x] python/game/page/<int:page>
+- [x] game
+- [x] game/<int:id>
+- [x] game/page/<int:page>
 
     
 select all games raise all games
@@ -86,14 +86,14 @@ submit a new game
         }
 
         url
-            http://localhost/game/
+           http://localhost:5000/game/
 
 delete a specific game
 
 - [x] using the delete method
 
         url
-            http://localhost/game/<int:id>
+            http://localhost:5000/game/<int:id>
 
 change the price of a specific game
         
@@ -104,12 +104,36 @@ change the price of a specific game
                 }
 
         url
-            http://localhost/5000/game/<int:id>
+            http://localhost:5000/game/<int:id>
 
 
 schema:
         
         {
+        "title": "Person",
+        "type": "object",
+        "required": [ "page_indx", "name", "price", "game_link", "game_pht"],
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "page_indx": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "price": {
+                "type": "string"
+            },
+            "game_link": {
+                "type": "string"
+            },
+            "game_pht": {
+                "type": "string"
+            }
+          }
+        }{
         "title": "Person",
         "type": "object",
         "required": [ "page_indx", "name", "price", "game_link", "game_pht"],
@@ -146,7 +170,7 @@ which is the standard for distributing Python modules. This allows you to easily
   
 You can install it in the virtual environment or on any other machine, even yours locally.
     
-- [x] type: pip install --upgrade --force-reinstall dist/games_store-{version}-py3-none-any.whl
+- [x] type: pip install --upgrade --force-reinstall dist/scraping-games-{version}-py3-none-any.whl
     
 
 # To run the project installed
@@ -156,6 +180,6 @@ If installed in any environment to run by calling entry_points.
 - [x] In the terminal type: {games_store_run} and press enter
     
     
-    Running on http://localhost/:5000/
+    Running on http://localhost:5000/
     
 
