@@ -32,6 +32,7 @@ class Scraping(GameData):
             )
 
     def __get_attribute_game(self):
+        logger.info(f'validado - {BeautifulSoup(self.web.text, "html.parser")}')
         self.web_page = BeautifulSoup(self.web.text, 'html.parser')
         logger.info(f'full web page - {self.web_page}')
         products_list = self.web_page.find(
