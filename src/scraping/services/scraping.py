@@ -33,6 +33,7 @@ class Scraping(GameData):
 
     def __get_attribute_game(self):
         self.web_page = BeautifulSoup(self.web.text, 'html.parser')
+        logger.info(f'full web page - {self.web_page}')
         products_list = self.web_page.find(
             'div',
             {
@@ -40,7 +41,7 @@ class Scraping(GameData):
                 'products-dock--main nvm-mod mod-group-sell mod-group-sell-offer',
             },
         ).find_all('div', {'class', 'product-card--grid'})
-        logger.info(f"products_list {products_list}")
+        logger.info(f'products_list {products_list}')
         for p in products_list:
             util = p.find(
                 'div',
