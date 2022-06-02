@@ -20,7 +20,7 @@ class Scraping(GameData):
             self.__get_attribute_game()
             logger.info(f'Success colection :) - {self.web.status_code}')
         except:
-            logger.info(f'shocked climb :( {self.web.status_code} - {self.web.text}')
+            logger.info(f'shocked climb :( {self.web.status_code}')
             self.add_game_database(
                 0,
                 1,
@@ -40,6 +40,7 @@ class Scraping(GameData):
                 'products-dock--main nvm-mod mod-group-sell mod-group-sell-offer',
             },
         ).find_all('div', {'class', 'product-card--grid'})
+        logger.info(f"products_list {products_list}")
         for p in products_list:
             util = p.find(
                 'div',
