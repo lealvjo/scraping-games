@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
 from loguru import logger
 
 from src.scraping.controller.game_data import GameData
@@ -8,8 +9,11 @@ from src.scraping.controller.game_data import GameData
 class Scraping(GameData):
     def __init__(self):
         GameData.__init__(self)
+        ua = UserAgent()
+        header = {'User-Agent': str(ua.random)}
         self.web = requests.get(
-            'https://www.nuuvem.com/promo/nintendo?utm_source=Nintendo&utm_medium=landing_page'
+            'https://www.nuuvem.com/promo/nintendo?utm_source=Nintendo&utm_medium=landing_page',
+            headers=header
         )
         logger.info(
             'Collecting promotions {}'.format('https://www.nuuvem.com/promo')
